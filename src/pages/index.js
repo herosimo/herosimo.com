@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+import { Box, Text } from '@chakra-ui/react'
 
 class RootIndex extends React.Component {
   render() {
@@ -19,6 +20,12 @@ class RootIndex extends React.Component {
           <Hero data={author.node} />
           <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>
+            <Box bg="tomato" w="100%" p={4} color="white">
+              This is the Box
+            </Box>
+            <Box color="white" bg="black" p={50} mb={5}>
+              Thes
+            </Box>
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (

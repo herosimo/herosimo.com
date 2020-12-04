@@ -1,16 +1,10 @@
-@font-face {
-  font-family: "Avenir";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/avenir-400.woff2") format("woff2");
-  font-display: swap;
-}
-
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1em;
   line-height: 1.65;
-  color: #373F49;
+  color: #373f49;
   background: #eee;
   margin: 0;
 }

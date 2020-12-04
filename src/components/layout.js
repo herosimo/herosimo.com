@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import base from './base.css'
 import Container from './container'
 import Navigation from './navigation'
+import { ChakraProvider } from '@chakra-ui/react'
+import theme from '../utilities/theme'
 
 class Template extends React.Component {
   render() {
@@ -15,10 +17,12 @@ class Template extends React.Component {
     }
 
     return (
-      <Container>
-        <Navigation />
-        {children}
-      </Container>
+      <ChakraProvider theme={theme} resetCSS={false}>
+        <Container>
+          <Navigation />
+          {children}
+        </Container>
+      </ChakraProvider>
     )
   }
 }
