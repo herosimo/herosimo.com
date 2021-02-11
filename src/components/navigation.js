@@ -1,22 +1,19 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styles from './navigation.module.css'
+import { Container, Flex } from '@chakra-ui/react'
+import logo from '../assets/logo.svg'
+import hamburger from '../assets/hamburger.svg'
 
 export default () => (
-  <nav role="navigation">
-    <ul className={styles.navigation}>
-      <li className={styles.navigationItem}>
-        <Link to="/">Home</Link>
-      </li>
-      <li className={styles.navigationItem}>
-        <Link to="/blog/">Blog</Link>
-      </li>
-      <li className={styles.navigationItem}>
-        <Link to="/about/">About</Link>
-      </li>
-      <li className={styles.navigationItem}>
-        <Link to="/contact/">Contact</Link>
-      </li>
-    </ul>
-  </nav>
+  <Container maxWidth={'1200px'}>
+    <nav role="navigation">
+      <Flex justifyContent={'space-between'} py={8}>
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
+        <img src={hamburger} alt="Hamburger" />
+      </Flex>
+    </nav>
+  </Container>
 )
