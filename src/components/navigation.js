@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styles from './navigation.module.css'
+
 import { Container, Flex } from '@chakra-ui/react'
+
 import logo from '../assets/logo.svg'
 import hamburger from '../assets/hamburger.svg'
 

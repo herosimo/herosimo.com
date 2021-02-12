@@ -9,7 +9,7 @@ export default () => (
     <Heading as={'h2'} fontSize="40px" marginBottom={'4'}>
       Say hi
     </Heading>
-    <Text as={'p'} marginBottom={'8'} fontSize={'xl'}>
+    <Text as={'p'} marginBottom={'8'} fontSize={'lg'}>
       Let's make something great together
     </Text>
     <Flex>

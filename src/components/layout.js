@@ -1,15 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import base from './base.css'
-import { Container } from '@chakra-ui/react'
-import Navigation from './navigation'
-import { ChakraProvider } from '@chakra-ui/react'
-import theme from '../utilities/theme'
-import Wrapper from './wrapper'
 
-import Cta from '../components-page/home/cta/cta'
+import { ChakraProvider } from '@chakra-ui/react'
+
+import Navigation from './navigation'
+import Cta from './cta'
 import Footer from './footer'
 
+import base from '../utilities/base.css'
+import theme from '../utilities/theme'
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
@@ -22,12 +20,10 @@ class Template extends React.Component {
 
     return (
       <ChakraProvider theme={theme} resetCSS={true}>
-        <Wrapper>
-          <Navigation />
-          {children}
-          <Cta />
-          <Footer />
-        </Wrapper>
+        <Navigation />
+        {children}
+        <Cta />
+        <Footer />
       </ChakraProvider>
     )
   }
