@@ -16,7 +16,12 @@ import {
 import arrowRight from '../../../assets/arrow-right.svg'
 
 export default ({ homepage, posts }) => (
-  <Container maxWidth={'1200px'} paddingY={'24'}>
+  <Container
+    className="panelColor"
+    maxWidth={'1200px'}
+    paddingY={'24'}
+    data-color="#30336b"
+  >
     <Heading as={'h2'} fontSize={'40px'} marginBottom={'4'}>
       {homepage.blogTitle.blogTitle}
     </Heading>

@@ -20,7 +20,7 @@ import arrowDown from '../../../assets/arrow-down.svg'
 import { Link } from 'gatsby'
 
 export default ({ homepage, siteDetails }) => (
-  <Container maxWidth={'1200px'}>
+  <Container maxWidth={'1200px'} className="panelColor" data-color="#131314">
     <div className={styles.banner}>
       <Grid templateColumns="repeat(12, 1fr)" gap={'30px'}>
         <GridItem colSpan={2}>
@@ -31,7 +31,7 @@ export default ({ homepage, siteDetails }) => (
           >
             {siteDetails.socialMedia.map((node) => {
               return (
-                <Link to={node.description} target="_blank">
+                <Link to={node.description} target="_blank" key={node.id}>
                   <Image src={node.file.url} alt={node.title} />
                 </Link>
               )

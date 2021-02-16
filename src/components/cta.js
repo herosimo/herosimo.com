@@ -5,7 +5,12 @@ import { Container, Flex, Heading, Text, Image } from '@chakra-ui/react'
 import arrowRight from '../assets/arrow-right.svg'
 
 export default ({ homepage, siteDetails }) => (
-  <Container maxWidth={'1200px'} paddingY={'24'}>
+  <Container
+    className="panelColor"
+    data-color="#131314"
+    maxWidth={'1200px'}
+    paddingY={'24'}
+  >
     <Heading as={'h2'} fontSize="40px" marginBottom={'4'}>
       {homepage.ctaTitle.ctaTitle}
     </Heading>

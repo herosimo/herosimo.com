@@ -9,6 +9,21 @@ import Blog from '../components-page/home/blog/blog'
 import Banner from '../components-page/home/banner/banner'
 
 class RootIndex extends React.Component {
+  componentDidMount() {
+    let dataColor = document.querySelectorAll('.panelColor')
+    let body = document.getElementsByTagName('body')
+
+    Array.prototype.map.call(dataColor, (node) => {
+      // const node1 = node.getBoundingClientRect().top
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY >= node.getBoundingClientRect().top) {
+          body[0].style.backgroundColor = node.dataset.color
+        }
+      })
+    })
+  }
+
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDetails = get(this, 'props.data.contentfulGeneralSiteDetails')
@@ -18,7 +33,6 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
-
         <Banner homepage={homepage} siteDetails={siteDetails} />
         <Blog homepage={homepage} posts={posts} />
         <Cta homepage={homepage} siteDetails={siteDetails} />
@@ -93,6 +107,7 @@ export const pageQuery = graphql`
         file {
           url
         }
+        id
       }
     }
   }
