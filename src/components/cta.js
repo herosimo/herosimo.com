@@ -2,19 +2,19 @@ import React from 'react'
 
 import { Container, Flex, Heading, Text, Image } from '@chakra-ui/react'
 
-import arrowRight from '../../../assets/arrow-right.svg'
+import arrowRight from '../assets/arrow-right.svg'
 
-export default () => (
+export default ({ homepage, siteDetails }) => (
   <Container maxWidth={'1200px'} paddingY={'24'}>
     <Heading as={'h2'} fontSize="40px" marginBottom={'4'}>
-      Say hi
+      {homepage.ctaTitle.ctaTitle}
     </Heading>
     <Text as={'p'} marginBottom={'8'} fontSize={'lg'}>
-      Let's make something great together
+      {homepage.ctaSubtitle.ctaSubtitle}
     </Text>
     <Flex>
       <Text as={'p'} fontWeight={'600'} fontSize={'2xl'} marginRight={'4'}>
-        hi@herosimo.com
+        {siteDetails.email}
       </Text>
       <Image src={arrowRight} alt={''} position={'relative'} top={'5px'} />
     </Flex>

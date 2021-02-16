@@ -3,10 +3,9 @@ import React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 
 import Navigation from './navigation'
-import Cta from './cta'
 import Footer from './footer'
 
-import base from '../utilities/base.css'
+import base from '../utilities/base.scss'
 import theme from '../utilities/theme'
 class Template extends React.Component {
   render() {
@@ -22,7 +21,6 @@ class Template extends React.Component {
       <ChakraProvider theme={theme} resetCSS={true}>
         <Navigation />
         {children}
-        <Cta />
         <Footer />
       </ChakraProvider>
     )

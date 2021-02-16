@@ -17,8 +17,9 @@ import codepen from '../../../assets/codepen.svg'
 import dribbble from '../../../assets/dribbble.svg'
 import github from '../../../assets/github.svg'
 import arrowDown from '../../../assets/arrow-down.svg'
+import { Link } from 'gatsby'
 
-export default () => (
+export default ({ homepage, siteDetails }) => (
   <Container maxWidth={'1200px'}>
     <div className={styles.banner}>
       <Grid templateColumns="repeat(12, 1fr)" gap={'30px'}>
@@ -28,10 +29,13 @@ export default () => (
             justifyContent={'center'}
             h="calc(100vh - 111px)"
           >
-            <Image src={behance} alt="Behance" />
-            <Image src={dribbble} alt="Dribbble" />
-            <Image src={github} alt="Github" />
-            <Image src={codepen} alt="Codepen" />
+            {siteDetails.socialMedia.map((node) => {
+              return (
+                <Link to={node.description} target="_blank">
+                  <Image src={node.file.url} alt={node.title} />
+                </Link>
+              )
+            })}
           </Flex>
         </GridItem>
         <GridItem colSpan={8}>
@@ -41,11 +45,10 @@ export default () => (
             h="calc(100vh - 111px)"
           >
             <Heading as={'h1'} fontSize="6xl" marginBottom={'6'}>
-              A UI/UX designer & front-end developer.
+              {homepage.bannerTitle.bannerTitle}
             </Heading>
             <Text as={'p'} marginBottom={'1'} fontSize={'xl'}>
-              Hi! I'm Herosimo Sribiko, a front-end web developer who also does
-              UI/UX design.
+              {homepage.bannerSubtitle.bannerSubtitle}
             </Text>
             <Text as={'p'} fontSize={'xl'}>
               Drop me a message at hi@herosimo.com
